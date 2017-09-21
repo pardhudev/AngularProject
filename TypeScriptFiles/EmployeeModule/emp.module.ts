@@ -6,8 +6,9 @@ import { CommonModule } from "@angular/common";
 import { EmployeeService } from "../Logics/EmployeeService";
 import { ConcatPipe } from "../Pipes/concat.pipe";
 import { MouseOverDirective } from "../directives/mouseover.directive";
+import {FormsModule  } from "@angular/forms";
 @NgModule({
-    imports:[CommonModule],
+    imports:[CommonModule,FormsModule],
     declarations:[MouseOverDirective,ConcatPipe,EmployeeComponent,EmployeeListComponent,
         EmployeeAddComponent],
         exports:[EmployeeComponent],

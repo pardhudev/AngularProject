@@ -17,9 +17,10 @@ var EmployeeAddComponent = /** @class */ (function () {
         this.eLogic = eLogic;
         this.OnSave = new core_1.EventEmitter();
         this.OnCancel = new core_1.EventEmitter();
+        this.emp = new employee_1.Employee("", 0);
     }
     EmployeeAddComponent.prototype.SaveEmployee = function () {
-        this.eLogic.SaveEmployee(new employee_1.Employee("E", 50000));
+        this.eLogic.SaveEmployee(this.emp);
         this.OnSave.emit();
     };
     EmployeeAddComponent.prototype.HideAddNew = function () {

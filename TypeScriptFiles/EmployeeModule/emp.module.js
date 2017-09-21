@@ -14,12 +14,13 @@ var common_1 = require("@angular/common");
 var EmployeeService_1 = require("../Logics/EmployeeService");
 var concat_pipe_1 = require("../Pipes/concat.pipe");
 var mouseover_directive_1 = require("../directives/mouseover.directive");
+var forms_1 = require("@angular/forms");
 var EmployeeModule = /** @class */ (function () {
     function EmployeeModule() {
     }
     EmployeeModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule],
+            imports: [common_1.CommonModule, forms_1.FormsModule],
             declarations: [mouseover_directive_1.MouseOverDirective, concat_pipe_1.ConcatPipe, emp_component_1.EmployeeComponent, emp_list_component_1.EmployeeListComponent,
                 emp_add_component_1.EmployeeAddComponent],
             exports: [emp_component_1.EmployeeComponent],
