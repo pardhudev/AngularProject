@@ -10,14 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var employee_1 = require("../Models/employee");
 var EmployeeService_1 = require("../Logics/EmployeeService");
 var EmployeeListComponent = /** @class */ (function () {
     function EmployeeListComponent(eLogic) {
+        var _this = this;
         this.eLogic = eLogic;
         this.OnAddNew = new core_1.EventEmitter();
         this.c = 0;
         this.myColor = "green";
-        this.Employees = eLogic.GetEmployees();
+        eLogic.GetEmployees().subscribe(function (r) {
+            var tempEmployees = r.json();
+            _this.Employees = tempEmployees.map(function (e) {
+                return new employee_1.Employee(e.FirsName + " " + e.LastName, e.Salary);
+            });
+        });
     }
     EmployeeListComponent.prototype.SetOrange = function () {
         this.myColor = "orange";

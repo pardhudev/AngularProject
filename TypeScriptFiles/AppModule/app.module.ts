@@ -8,7 +8,8 @@ import { EmployeeComponent } from "../EmployeeModule/emp.component";
 const c:Routes =[{path:'Customer',
 component:CustomerComponent},
 {path:'Product',component:ProductComponent},
-{path:'Employee',component:EmployeeComponent}];
+{path:'Employee',component:EmployeeComponent},
+{path:'',component:ProductComponent}];
 
 
 

@@ -15,7 +15,8 @@ var emp_component_1 = require("../EmployeeModule/emp.component");
 var c = [{ path: 'Customer',
         component: app_component_1.CustomerComponent },
     { path: 'Product', component: app_component_1.ProductComponent },
-    { path: 'Employee', component: emp_component_1.EmployeeComponent }];
+    { path: 'Employee', component: emp_component_1.EmployeeComponent },
+    { path: '', component: app_component_1.ProductComponent }];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }

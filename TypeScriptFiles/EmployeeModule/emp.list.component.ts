@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from "@angular/core"
 import { Employee } from "../Models/employee"
 import { EmployeeService } from "../Logics/EmployeeService"
+import { Http  } from "@angular/http";
 @Component({
     selector: 'employee-list',
     templateUrl: './emp.list.component.html'
@@ -14,7 +15,12 @@ export class EmployeeListComponent {
 
     constructor(private eLogic: EmployeeService) {
         this.myColor="green";
-        this.Employees = eLogic.GetEmployees();
+       eLogic.GetEmployees().subscribe((r)=>{
+           let tempEmployees:Array<any> =r.json();
+         this.Employees= tempEmployees.map((e)=>{
+                return new Employee(e.FirsName+" "+e.LastName,e.Salary);
+           });
+       });
     }
 
     SetOrange():void{
